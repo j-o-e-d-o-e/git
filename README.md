@@ -4,6 +4,29 @@
 
 [Lynda tutorial] (https://www.lynda.com/Git-tutorials/Git-Branches-Merges-Remotes/5030980-2.html)
 
+### Clone repo
+
+- `git clone <url> <dir>` clones remote to <dir>
+- if <dir> does not exist, directory is created
+- if <dir> not provided, repo is stored in directory with name equivalent to remote branch
+
+### Push to remote
+
+- `git push -u origin master` pushes `master`-branch to `origin`-remote
+
+### Add remote to local repo
+
+- `git remote add origin <url>` and `git push -u origin master`
+- `origin` = remote name
+- `git remote -v` shows remotes
+- remote metadata is stored in `.git/config`
+- `git remote rm origin` would delete origin remote
+
+### Remote
+
+- branch `origin/master` is stored locally, mirrors master-branch on local machine and references remote
+- generally, commit locally, fetch remote to `origin/master`, merge local commits with `origin/master` and push results to remote
+
 ### Stash changes
 
 - separate area apart from working dir, staging area and repo
@@ -33,13 +56,13 @@
 - to undo merge, `git reset --hard HEAD^` or `HEAD^^`, if two commits were merged
 
 - Fast-Forward merge
-  - no further commits on master from commit where <branch> branched off, but on <branch>
-  - commits from <branch> will be simply added to master timeline
-  - should be no conflicts
+    - no further commits on master from commit where <branch> branched off, but on <branch>
+    - commits from <branch> will be simply added to master timeline
+    - should be no conflicts
 - "Real" merge
-  - commits also on master -> master has commit(s) that <branch> has not and vice versa
-  - commits from <branch> are merged
-  - conflicts between commits from branches can arise
+    - commits also on master -> master has commit(s) that <branch> has not and vice versa
+    - commits from <branch> are merged
+    - conflicts between commits from branches can arise
 
 ### Reset branch
 
@@ -51,19 +74,19 @@
 - to undo a reset, copy the hash from the latest commit and after initial reset, reset branch again with <commit> = copied hash to go back to that point in timeline -> only possible if no commits have been executed in between
 
 - 3 reset-types:
- - SOFT:
-  - `git reset --soft <commit>`, e.g. with <commit> =  HEAD^ latest commit discarded, HEAD points to last but one
-  - moves HEAD and discarded commits into staging area
-  - useful for making one commit out of two -> go back two commits with <commit> = HEAD^^ -> discarded commits are in staging area and can be re-committed in one commit
- - MIXED:
-  - `git reset --mixed <commit>`
-  - moves HEAD and discarded commits into working dir
-  - default, if no option this type is used
-  - useful for splitting one commit into multiple commits -> go back one commit -> discarded commits are in working dir and can be re-added to staging area
- - HARD:
-  - `git reset --hard <commit>`
-  - moves HEAD amd discarded commits are gone
-  - useful to permanently undo commits, e.g. undo merge -> go back one commit -> do something different ...
+    - SOFT:
+        - `git reset --soft <commit>`, e.g. with <commit> =  HEAD^ latest commit discarded, HEAD points to last but one
+        - moves HEAD and discarded commits into staging area
+        - useful for making one commit out of two -> go back two commits with <commit> = HEAD^^ -> discarded commits are in staging area and can be re-committed in one commit
+    - MIXED:
+        - `git reset --mixed <commit>`
+        - moves HEAD and discarded commits into working dir
+        - default, if no option this type is used
+        - useful for splitting one commit into multiple commits -> go back one commit -> discarded commits are in working dir and can be re-added to staging area
+    - HARD:
+        - `git reset --hard <commit>`
+        - moves HEAD amd discarded commits are gone
+        - useful to permanently undo commits, e.g. undo merge -> go back one commit -> do something different ...
 
 ### Delete branch
 
@@ -81,6 +104,7 @@
 ### Show/create branches
 
 - `git branch` shows current branches. Currently checked out branched is marked with an asteriks
+- `git branch -a` shows all branches. With option `-r` only remotes
 - `git branch <name>` creates new branch with the specified name
 - it matters to which branch HEAD currently points when creating new branch, because the new branch branches from this branch
 
@@ -153,5 +177,3 @@
 ### Useful
 
 - Write commit commit messages in present tense, not past tense
-
-
