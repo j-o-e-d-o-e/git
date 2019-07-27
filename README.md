@@ -9,6 +9,7 @@
 - `git clone <url> <dir>` clones remote to <dir>
 - if <dir> does not exist, directory is created
 - if <dir> not provided, repo is stored in subdir with name equivalent to remote branch
+- provides access to other remote-branches, if there, and all pushed (local) branches
 
 ### Pull from remote
 
@@ -20,8 +21,12 @@
 
 ### Push to remote
 
-- `git push -u origin master` pushes `master`-branch to `origin`-remote and  moves the `origin/master`-pointer to be in sync with `master`
+- `git push -u origin master` pushes `master`-branch to `origin`-remote (alias) and  moves the `origin/master`-pointer to be in sync with `master`
+- `-u` ensures that local `master` tracks remote. `u` stands for 'upstream'. Allows not to explicitly mention remote-branch for pushing, fetching and pulling
 - consequently, `master`, `origin` and `origin/master` are in sync, again
+
+- for consequent pushes, `-u`-option is not necessary, tracking is already initiated and consequently `origin master` can also be omitted
+- simply: `git push`
 
 ### Add remote to local repo
 
@@ -34,7 +39,7 @@
 ### Remote
 
 - branch `origin/master` is stored locally, mirrors master-branch on local machine and references remote-master-branch
-- `origin/master` tries to stay always in sync with remote
+- `origin/master` is the tracking branch for the remote-branch and tries to stay always in sync with remote
 - generally, commit locally, fetch remote to `origin/master`, merge local commits with `origin/master` and push results to remote
 
 ### Stash changes
