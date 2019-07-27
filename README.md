@@ -4,20 +4,28 @@
 
 [Lynda tutorial] (https://www.lynda.com/Git-tutorials/Git-Branches-Merges-Remotes/5030980-2.html)
 
-### Clone repo
-
-- `git clone <url> <dir>` clones remote to <dir>
-- if <dir> does not exist, directory is created
-- if <dir> not provided, repo is stored in subdir with name equivalent to remote branch
-- provides access to other remote-branches, if there, and all pushed (local) branches
-
 ### Pull from remote
 
 - 
 
 ### Fetch from remote
 
-- 
+- `git fetch <remote>` synchronizes `origin/master` with remote
+- if only one remote and due to tracking, <remote> can be omitted
+
+- generally, fetch often, fetch before each push
+- `fetch` saves changes from remote only to local tracking-branch `origin/master`
+- but changes are not merged into `master`
+- therefore, `git merge origin/master` to merge `master` with `origin/master`
+
+### Clone repo
+
+- `git clone <url> <dir>` clones remote to <dir>
+- if <dir> does not exist, directory is created
+- if <dir> not provided, repo is stored in subdir with name equivalent to remote branch
+
+- provides access to other remote-branches, if there, and all pushed (local) branches
+- cloning adds tracking automatically
 
 ### Push to remote
 
@@ -181,6 +189,7 @@
 - `git log <file>` shows logs about changes related to the specified file
 - `git log --graph --all` shows graph with all branches
 - `git log <branch>` shows logs for another than current branch
+- option `--oneline` for shortened view
 
 ### Diff
 
