@@ -6,7 +6,9 @@
 
 ### Pull from remote
 
-- 
+- `git pull` does both steps fetching and merging, at once
+- if no commits haven't been made, `pull` recommended
+- otherwise, `fetch` for more fine-grained control about merge conflicts
 
 ### Fetch from remote
 
@@ -36,6 +38,22 @@
 - for consequent pushes, `-u`-option is not necessary, tracking is already initiated and consequently `origin master` can also be omitted
 - simply: `git push`
 
+- `pull` before `push` to make sure local `master` is insync with remote and integration succeeds
+
+### Create local tracking branch
+
+- `git checkout -b <branch> origin/<remote>` creates new <branch> which tracks remote-brach <remote> from `origin` and checks it out
+- so, <branch> braches off of origin/<remote>
+
+### Delete remote branch
+
+- `git push origin --delete <branch>` deletes remote branch <branch> from remote `origin`
+- tracking branch on local machine can then also be deleted
+
+### Add remote branch
+
+- `git push -u origin <branch>` pushes local <branch> to remote and also enables tracking
+
 ### Add remote to local repo
 
 - `git remote add origin <url>` and `git push -u origin master`
@@ -49,6 +67,8 @@
 - branch `origin/master` is stored locally, mirrors master-branch on local machine and references remote-master-branch
 - `origin/master` is the tracking branch for the remote-branch and tries to stay always in sync with remote
 - generally, commit locally, fetch remote to `origin/master`, merge local commits with `origin/master` and push results to remote
+- remotes branches cannot be checked out, instead new branch which tracks remote branch has to be created
+- multiple branches can be added to and checked out from remote
 
 ### Stash changes
 
@@ -129,6 +149,7 @@
 - `git branch` shows current branches. Currently checked out branched is marked with an asteriks
 - `git branch -a` shows all branches, with option `-r` only remotes
 - `git branch <name>` creates new branch with the specified name
+- `git branch <name> <branch>` creates new branch which branches from <branch>
 - it matters to which branch HEAD currently points when creating new branch, because the new branch branches from this branch
 
 ## Basics
