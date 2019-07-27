@@ -8,23 +8,33 @@
 
 - `git clone <url> <dir>` clones remote to <dir>
 - if <dir> does not exist, directory is created
-- if <dir> not provided, repo is stored in directory with name equivalent to remote branch
+- if <dir> not provided, repo is stored in subdir with name equivalent to remote branch
+
+### Pull from remote
+
+- 
+
+### Fetch from remote
+
+- 
 
 ### Push to remote
 
-- `git push -u origin master` pushes `master`-branch to `origin`-remote
+- `git push -u origin master` pushes `master`-branch to `origin`-remote and  moves the `origin/master`-pointer to be in sync with `master`
+- consequently, `master`, `origin` and `origin/master` are in sync, again
 
 ### Add remote to local repo
 
 - `git remote add origin <url>` and `git push -u origin master`
-- `origin` = remote name
+- `origin` = standard name of (primary) remote-branch, by convention
 - `git remote -v` shows remotes
 - remote metadata is stored in `.git/config`
-- `git remote rm origin` would delete origin remote
+- `git remote rm origin` would delete remote-branch `origin`
 
 ### Remote
 
-- branch `origin/master` is stored locally, mirrors master-branch on local machine and references remote
+- branch `origin/master` is stored locally, mirrors master-branch on local machine and references remote-master-branch
+- `origin/master` tries to stay always in sync with remote
 - generally, commit locally, fetch remote to `origin/master`, merge local commits with `origin/master` and push results to remote
 
 ### Stash changes
@@ -104,7 +114,7 @@
 ### Show/create branches
 
 - `git branch` shows current branches. Currently checked out branched is marked with an asteriks
-- `git branch -a` shows all branches. With option `-r` only remotes
+- `git branch -a` shows all branches, with option `-r` only remotes
 - `git branch <name>` creates new branch with the specified name
 - it matters to which branch HEAD currently points when creating new branch, because the new branch branches from this branch
 
