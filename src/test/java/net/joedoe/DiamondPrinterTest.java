@@ -74,6 +74,22 @@ public class DiamondPrinterTest {
     }
 
     @Test
+    public void testSixBySixDiamond() {
+        List<String> output = diamondPrinter.printToList('F');
+        assertThat(output, is(asList("     A     ",
+                                     "    B B    ",
+                                     "   C   C   ",
+                                     "  D     D  ",
+                                     " E       E ",
+                                     "F         F",
+                                     " E       E ",
+                                     "  D     D  ",
+                                     "   C   C   ",
+                                     "    B B    ",
+                                     "     A     ")));
+    }
+
+    @Test
     public void testFullDiamond() {
         List<String> output = diamondPrinter.printToList('Z');
         assertThat(output, is(asList("                         A                         ",
