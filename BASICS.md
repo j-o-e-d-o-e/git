@@ -14,11 +14,12 @@
 ### Revert a commit
 
 - `git revert <hash>` reverts commit with specified hash by making a new commit
-- `git revert HEAD` reverts commit to which HEAD currently points
+- e.g. `git revert HEAD` reverts commit to which HEAD currently points
 
 - similar to retrieving older version, but for whole commit
+- unlike resetting a branch, it does not move the HEAD pointer 
 - useful to undo changes of an entire commit
-- conflicts can arise if commits after specified commit include changes on same line of same file
+- conflicts can arise if later commits after specified commit include changes on same line of same file
 
 
 ### Retrieve older version from repo
