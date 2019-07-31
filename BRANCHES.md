@@ -2,7 +2,7 @@
 
 ### Reset branch
 
-- `reset` changes the files in the staging area and/or working dir to the state they had when a specified commit was made 
+- `reset` changes the files in the staging tree and/or working tree to the state they had when a specified commit was made 
 - moves HEAD to the specified commit and previous commits will be discarded
 - "Make my project look like it did back then"
 - Careful if commits are already shared with remote
@@ -13,17 +13,17 @@
     - SOFT:
         - `git reset --soft <commit>`
         - e.g. with `<commit> =  HEAD^` latest commit is discarded and HEAD points to last but one
-        - discarded commits are moved into staging area
+        - discarded commits are moved into staging tree
         - useful for making one commit out of two:
             - go back two commits with `<commit> = HEAD^^`
-            - discarded commits are in staging area and can be re-committed in one commit
+            - discarded commits are in staging tree and can be re-committed in one commit
     - MIXED:
         - `git reset --mixed <commit>`
-        - discarded commits are moved into working dir
+        - discarded commits are moved into working tree
         - default, if no option is provided
         - useful for splitting one commit into multiple commits:
             - go back one commit
-            - discarded commits are in working dir and can be re-added to staging area
+            - discarded commits are in working tree and can be re-added to staging tree
     - HARD:
         - `git reset --hard <commit>`
         - discarded commits are gone
@@ -48,7 +48,7 @@
 
 - `git checkout <branch>` points HEAD to specified branch, if available
 - `git checkout -b <branch>` creates new branch and checks it out
-- `checkout` switches to branch, gets files from branch and puts them in working dir, if there are no conflicts
+- `checkout` switches to branch, gets files from branch and puts them in working tree, if there are no conflicts
 - `__git_ps1` starts script showing current branch in console
 
 ### Show/create branches
