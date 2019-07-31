@@ -1,5 +1,12 @@
 # Branch
 
+
+- for each new big feature, create a new branch
+- if feature development succeeds, merge feature-branch into master-branch
+- useful for isolating these features separate from dev on master
+- each branch accesses the same un-staged changes, but has its own staging tree and repo
+
+
 ### Reset branch
 
 - `reset` changes the files in the staging tree and/or working tree to the state they had when a specified commit was made 
@@ -44,12 +51,14 @@
 - `git branch -d <branch>` deletes branch
 - currently checked out branch cannot be deleted
 
+
 ### Checkout branch
 
 - `git checkout <branch>` points HEAD to specified branch, if available
 - `git checkout -b <branch>` creates new branch and checks it out
 - `checkout` switches to branch, gets files from branch and puts them in working tree, if there are no conflicts
 - `__git_ps1` starts script showing current branch in console
+
 
 ### Show/create branches
 
