@@ -1,6 +1,5 @@
 # Branch
 
-
 - for each new big feature, create a new branch
 - if feature development succeeds, merge feature-branch into master-branch
 - useful for isolating these features separate from dev on master
@@ -83,7 +82,8 @@
 
 - `git branch <name>` creates new branch with the specified name
 - it matters to which branch HEAD currently points when creating new branch, because the new branch branches from this branch
-- `git branch <name> <branch>` creates new branch which branches from `<branch>`
+- `git branch <name> <branch>` creates new branch `<name>` which branches from tip of `<branch>`
+- `git branch <name> <commit>` creates new branch which branches from specified `<commit>` of current branch
 
 
 ## Materials
