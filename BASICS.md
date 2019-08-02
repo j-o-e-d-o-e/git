@@ -1,6 +1,5 @@
 # Basics
 
-
 ### .gitignore
 
 - [Templates](https://github.com/github/gitignore)
