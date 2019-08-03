@@ -18,8 +18,6 @@
 
 - if local state is preferable to remote state, e.g. if remote went wrong and needs repair
 - `git push -f` forces push and replaces remote state with local state
-
-
 - scenario might be:
     - `git fetch` fetches changes from remote
     - inspection of changes shows these are undesirable
