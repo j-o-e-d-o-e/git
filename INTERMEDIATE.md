@@ -6,16 +6,12 @@
 - apply the changes from one or more existing commits
 - each cherry-picked commit becomes a new commit on the current branch
 - but, the hash of these new commits differs from the hash of the cherry-picked commit, since its parent-commit and metadata differs
-- useful for copying a specific change/commit from another branch instead of merging branches and getting all changes
-
-
+- useful for copying a specific change from another branch instead of merging branches and getting all changes
 - `git cherry-pick <commit>` copies specified commit (e.g. hash or tag) into current branch and creates new commit
 - commit message is by default equal to the original message of the cherry-picked commit
 - with option `-e` a new commit message can be edited
-
-
 - commits which are merge-commits cannot be cherry-picked
-- cherry-picking can result in conflicts to be resolved
+- cherry-picking can result in conflicts
 
 
 ### Force push
@@ -43,26 +39,26 @@
 
 ---
 
+
 ### Interactive staging
 
 - allows staging portions of changed files and to make smaller, more focused commits
 - `git add -i` enters interactive staging mode in console
-- from there, patch mode for partial stages ('hunks') can be entered
+- from there, patch mode for partial stages ('hunks') can be selected
 
 
 ### Bisect
 
 - to find a commit which introduced a bug or regression
-- in a bisect-session, search-space is continuously narrowed to identify the bad commit
-
+- in a bisect-session, the search-space is continuously narrowed to identify the bad commit
 - procedure:
     - `git bisect start` starts bisect-session
     - `git bisect bad <commit>` marks `<commit>` as bad.
-    - if `<commit>`omitted, it will where HEAD currently points to, by default
+    - if `<commit>`omitted, it will be where HEAD currently points to
     - `git bisect good <commit>` marks `<commit>` as good
-    - the mid-point is loaded in the working tree and HEAD points to this mid-point
+    - the mid-point is loaded in the working tree and HEAD points to this commit
     - one checks this state to define if it is good or bad, e.g. by running tests or manually 
-    - `git bisect good` or `git bisect bad` marks again the current mid-point
+    - `git bisect good` or `git bisect bad` marks current commit again
     - bisect proceeds by moving HEAD to the new mid-point and loading the new state in working tree
     - checking and marking can be repeated multiple times until bisect narrows possibilities down to one commit
     - finally, `git bisect reset` exits bisect and resets working tree to where HEAD pointed before bisect-session
@@ -73,9 +69,9 @@
 
 - `git blame <file>` lists changes in `<file>` line by line with metadata and to which commit these changes belong
 - with option `-w` whitespace is ignored
-- `git blame -L <start>,<end> <file>` list changes in `<file>` from line `<start>` to `<end>`
+- `git blame -L <start>,<end> <file>` lists changes in `<file>` from line `<start>` to `<end>`
 - `git blame <commit> <file>` list changes in `<file>` in the timeline up to `<commit>`
-- useful to check who made which changes and when and why
+- useful to check who made which changes, when and why
 
 
 ### Log options

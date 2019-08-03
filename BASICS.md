@@ -4,7 +4,6 @@
 
 - [Templates](https://github.com/github/gitignore)
 - rules in .gitignore are only applied to untracked files
-
 - `git rm --cached <file>` removes tracked `<file>` to not be further tracked
  - useful if file has been added to .gitignore and these changes in .gitignore shall come into effect
  - as 2nd step, this change needs to be committed to repo (like remove tracked files)
@@ -14,7 +13,6 @@
 
 - `git revert <hash>` reverts commit with specified hash by making a new commit
 - e.g. `git revert HEAD` reverts commit to which HEAD currently points
-
 - similar to retrieving older version, but for whole commit
 - unlike resetting a branch, it does not move the HEAD pointer 
 - useful to undo changes of an entire commit

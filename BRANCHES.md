@@ -12,12 +12,8 @@
 - "Make my project look like it did back then"
 - moves HEAD to the specified commit and later commits will be discarded
 - e.g. `git reset HEAD^` moves HEAD to last but one (`HEAD^`) and discards latest commit
-
-
 - Careful if commits are already shared with remote
 - Mostly used within private repo
-
-
 - 3 reset types:
     - SOFT:
         - `git reset --soft <commit>`
@@ -37,8 +33,6 @@
         - discarded commits are gone
         - useful to permanently undo commits, e.g. if feature dev did not succeed
         - useful to create new branch before resetting hard to keep changes
-
-
 - undo a reset:
     - copy the hash from the discarded commit
     - after initial reset, reset branch again with `<commit>` corresponding to copied hash to go back to that point in timeline
@@ -64,8 +58,6 @@
 - `git checkout <branch>` points HEAD to specified branch
 - `git checkout -b <branch>` creates new branch and checks it out (`-b` stands for branch)
 - `checkout` switches to branch, gets files from branch and puts them in working dir (if there are no conflicts)
-
-
 - conflicts can only arise if changes have been made in the working tree
 - resolve conflicts for checkout:
     - stash changes for later use
@@ -78,8 +70,6 @@
 - `git branch` shows current branches
 - currently checked out branch is marked with an asterisk
 - `git branch -a` shows all branches including remotes, with option `-r` only remotes
-
-
 - `git branch <name>` creates new branch with the specified name
 - it matters to which branch HEAD currently points when creating new branch, because the new branch branches from this branch
 - `git branch <name> <branch>` creates new branch `<name>` which branches from tip of `<branch>`

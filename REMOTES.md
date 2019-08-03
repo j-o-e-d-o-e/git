@@ -18,8 +18,6 @@
 
 - `git fetch <remote>` synchronizes `origin/<remote>` with its remote
 - if only one remote and due to tracking, `<remote>` can be omitted
-
-
 - generally, fetch often and fetch before each push
 - `fetch` saves changes from remote only to local tracking-branch `origin/master`, but changes are not merged into `master`, yet
 - therefore, `git merge origin/master` executed from `master` to merge `origin/master` into `master`
@@ -30,8 +28,6 @@
 - `git clone <url> <dir>` clones remote to `<dir>`
 - if `<dir>` does not exist, directory is created
 - if `<dir>` not provided, repo is stored in subdirectory with name equivalent to remote-branch
-
-
 - `clone` provides access to all pushed remote-branches and adds tracking automatically
 
 
@@ -39,14 +35,10 @@
 
 - `git push -u origin master` pushes `master`-branch to `origin`-remote (alias) and  moves the `origin/master`-pointer to be in sync with `master`
 - consequently, the corresponding branch `master` in remote `origin` and local `origin/master` are in sync
-
-
 - `-u` ensures that local `origin/master` tracks remote and stands for 'upstream'
 - allows not to explicitly mention remote-branch each time for fetching, pulling and pushing
 - for following pushes, `-u`-option can be omitted since tracking is already initiated
 - consequently `origin master` can also be omitted ->  `git push`
-
-
 - `pull` (or `fetch` and `merge`) before `push` to make sure local `master` is in-sync with remote and integration succeeds
 
 

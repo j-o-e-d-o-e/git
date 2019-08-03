@@ -1,5 +1,7 @@
 # git_playground
 
+Playground for git and summaries.
+
 
 ## Materials
 
